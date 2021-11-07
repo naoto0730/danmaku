@@ -3,7 +3,8 @@
     "description": "",
     "dependencies": {
         "device": "*",
-        "pxt-status-bar": "github:jwunderl/pxt-status-bar#v0.4.1"
+        "pxt-status-bar": "github:jwunderl/pxt-status-bar#v0.4.1",
+        "arcade-sprite-data": "github:microsoft/arcade-sprite-data#v0.1.0"
     },
     "files": [
         "main.blocks",
