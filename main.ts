@@ -6,6 +6,15 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Player, function (sprite, ot
     info.changeLifeBy(-1)
     pause(100)
 })
+scene.onOverlapTile(SpriteKind.tama, sprites.builtin.forestTiles6, function (sprite, location) {
+    sprite.destroy()
+})
+sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
+    if (true) {
+    	
+    }
+    mySprite2.vy = -120
+})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile2 = sprites.create(img`
         ...........ccccc66666...........
@@ -46,8 +55,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 let projectile: Sprite = null
 let projectile2: Sprite = null
+let mySprite2: Sprite = null
 let mySprite: Sprite = null
-let tama = img`
+let tama2 = img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -87,7 +97,7 @@ mySprite = sprites.create(img`
 controller.moveSprite(mySprite)
 info.setLife(80)
 scene.cameraFollowSprite(mySprite)
-let mySprite2 = sprites.create(img`
+mySprite2 = sprites.create(img`
     ........................
     ........................
     ........................
@@ -123,14 +133,25 @@ game.onUpdateInterval(100, function () {
 })
 game.onUpdateInterval(300, function () {
     for (let index = 0; index < 2; index++) {
-        projectile = sprites.createProjectileFromSprite(tama, mySprite2, 50, 50)
-        projectile = sprites.createProjectileFromSprite(tama, mySprite2, 0, 50)
-        projectile = sprites.createProjectileFromSprite(tama, mySprite2, -50, 50)
-        projectile = sprites.createProjectileFromSprite(tama, mySprite2, 75, 50)
-        projectile = sprites.createProjectileFromSprite(tama, mySprite2, -75, 50)
-        projectile = sprites.createProjectileFromSprite(tama, mySprite2, 63, 50)
-        projectile = sprites.createProjectileFromSprite(tama, mySprite2, 63, 50)
-        projectile = sprites.createProjectileFromSprite(tama, mySprite2, 30, 50)
-        projectile = sprites.createProjectileFromSprite(tama, mySprite2, -30, 50)
+        projectile = sprites.createProjectileFromSprite(tama2, mySprite2, 50, 50)
+        projectile = sprites.createProjectileFromSprite(tama2, mySprite2, 0, 50)
+        projectile = sprites.createProjectileFromSprite(tama2, mySprite2, -50, 50)
+        projectile = sprites.createProjectileFromSprite(tama2, mySprite2, 75, 50)
+        projectile = sprites.createProjectileFromSprite(tama2, mySprite2, -75, 50)
+        projectile = sprites.createProjectileFromSprite(tama2, mySprite2, 63, 50)
+        projectile = sprites.createProjectileFromSprite(tama2, mySprite2, 63, 50)
+        projectile = sprites.createProjectileFromSprite(tama2, mySprite2, 30, 50)
+        projectile = sprites.createProjectileFromSprite(tama2, mySprite2, -30, 50)
+        projectile = sprites.createProjectileFromSprite(tama2, mySprite2, 50, -50)
+        projectile = sprites.createProjectileFromSprite(tama2, mySprite2, 0, -50)
+        projectile = sprites.createProjectileFromSprite(tama2, mySprite2, -50, -50)
+        projectile = sprites.createProjectileFromSprite(tama2, mySprite2, 75, -50)
+        projectile = sprites.createProjectileFromSprite(tama2, mySprite2, -75, -50)
+        projectile = sprites.createProjectileFromSprite(tama2, mySprite2, 63, -50)
+        projectile = sprites.createProjectileFromSprite(tama2, mySprite2, 63, -50)
+        projectile = sprites.createProjectileFromSprite(tama2, mySprite2, 30, -50)
+        projectile = sprites.createProjectileFromSprite(tama2, mySprite2, -30, -50)
+        projectile = sprites.createProjectileFromSprite(tama2, mySprite2, 80, 0)
+        projectile = sprites.createProjectileFromSprite(tama2, mySprite2, -80, 0)
     }
 })
